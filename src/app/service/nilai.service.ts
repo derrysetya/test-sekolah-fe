@@ -26,6 +26,10 @@ export class NilaiService {
     return this.httpClient.get<ApiResponse>(this.url+"?id="+id);
   }
 
+  getDataByIdMapel(id: string): Observable<ApiResponse>{
+    return this.httpClient.get<ApiResponse>(this.url+"/mapel?id="+id);
+  }
+
   saveData(data: NilaiModel):Observable<ApiResponse>{
     return this.httpClient.post<ApiResponse>(this.url+"/save", data);
    }

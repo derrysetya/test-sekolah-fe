@@ -7,11 +7,26 @@
     <div class="col">
       <div class="card shadow">
         <div class="card-header border-0">
-          
-          <div class="mb-0 text-right">
+          <form [formGroup]="validateForm">
+          <div class="mb-0 text-left">
+              <div class="col-lg-6">
+                <select name="idMapel" id="idMapel" class="form-control form-control-alternative"
+                    placeholder="Mata Pelajaran"
+                    formControlName="idMapel">
+                    <option value="" selected>Pilih Mata Pelajaran</option>
+                        <option [value]="item.cd" *ngFor="let item of listMapel">
+                          {{item.nama}}
+                        </option>
+                      </select>
+                    <a (click)="getDataByMapel()"  class="btn btn-info">view Data</a>
+              </div>
+              
+            </div>
+            <div class="mb-0 text-right">
               <a [routerLink]="'/form-nilai'" class="btn btn-primary">Tambah Data</a>
             </div>
-        </div>
+          </form>
+          </div>
         <div class="table-responsive">
           <table class="table align-items-center table-flush">
             <thead class="thead-light">
