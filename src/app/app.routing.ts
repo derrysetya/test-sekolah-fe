@@ -4,12 +4,11 @@ import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 
 const routes: Routes =[
   {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: 'nilai',
     pathMatch: 'full',
   }, {
     path: '',
@@ -21,17 +20,8 @@ const routes: Routes =[
       }
     ]
   }, {
-    path: '',
-    component: AuthLayoutComponent,
-    children: [
-      {
-        path: '',
-        loadChildren: () => import('src/app/layouts/auth-layout/auth-layout.module').then(m => m.AuthLayoutModule)
-      }
-    ]
-  }, {
     path: '**',
-    redirectTo: 'dashboard'
+    redirectTo: 'nilai'
   }
 ];
 

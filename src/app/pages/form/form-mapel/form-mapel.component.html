@@ -1,0 +1,63 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+</div>
+<!-- Page content -->
+<div class="container-fluid mt--7">
+  <!-- Table -->
+  <div class="row">
+    <div class="col">
+        <div class="card bg-secondary shadow">
+            <div class="card-header bg-white border-0">
+              <div class="row align-items-center">
+                <div class="col-8">
+                  <h3 class="mb-0"></h3>
+                </div>
+                
+                <div class="col-4 text-right">
+                    <a [routerLink]="'/mapel'" class="btn  btn-danger">Kembali</a>
+                  <a (click)="save()" class="btn  btn-primary">Simpan</a>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <form [formGroup]="validateForm">
+                
+                <div class="pl-lg-4">
+                    <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label class="form-control-label" for="nama">Nama</label>
+                        <input id="nama" class="form-control form-control-alternative" placeholder="Masukkan Nama" name="nama" formControlName="nama" type="text">
+                      </div>
+                    </div>
+                    </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label class="form-control-label" for="kkm">KKM</label>
+                        <input id="kkm" class="form-control form-control-alternative" placeholder="Masukkan nilai KKM" name="kkm" formControlName="kkm" type="number">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label class="form-control-label" for="idGuru">Guru</label>
+                        <select name="idGuru" id="idGuru" class="form-control form-control-alternative"
+                        placeholder="Nama status"
+                        formControlName="idGuru">
+                      <option [value]="item.cd" *ngFor="let item of listGuru">
+                        {{item.nama}}
+                      </option>
+                    </select>
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+                
+              </form>
+            </div>
+          </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+</div>
+<!-- Page content -->
+<div class="container-fluid mt--7">
+  <!-- Table -->
+  <div class="row">
+    <div class="col">
+      <div class="card shadow">
+        <div class="card-header border-0">
+          
+          <div class="mb-0">
+              <a [routerLink]="'/form-mapel'" class="btn btn-primary">Tambah Data</a>
+            </div>
+        </div>
+        <div class="table-responsive">
+          <table class="table align-items-center table-flush">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">Nama</th>
+                <th scope="col">KKM</th>
+                <th scope="col">Guru</th>
+                
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of data; let i = index">
+                
+                <td>{{item.nama}}</td>
+                <td>{{item.kkm}}</td>
+                <td>{{item.guru}}</td>
+                <td>
+                  
+                  <a (click)="toDetail(item.id)" class="btn btn-info">Edit</a>
+                  <a (click)="toDelete(item.id)" class="btn btn-danger">Delete</a>
+                  </td>
+
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
